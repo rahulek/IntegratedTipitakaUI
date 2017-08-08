@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="tipitaka_translation.FXMLDocumentController">
+    <children>
+        <HBox alignment="CENTER_LEFT" layoutX="14.0" layoutY="14.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="79.0" prefWidth="872.0" spacing="10.0" AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="14.0" AnchorPane.topAnchor="14.0">
+            <children>
+                <ImageView fitHeight="100.0" fitWidth="193.0" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@Buddha.jpg" />
+                    </image></ImageView>
+                <Label alignment="CENTER" contentDisplay="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="42.0" prefWidth="525.0" text="Tipiṭaka Marāṭhī Translation Project" textFill="#393bcd" HBox.hgrow="NEVER">
+                    <padding>
+                        <Insets left="10.0" right="10.0" />
+                    </padding>
+                    <font>
+                        <Font name="Tahoma" size="24.0" />
+                    </font>
+                </Label>
+                <ImageView fitHeight="98.0" fitWidth="108.0" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@dhammacakka.jpg" />
+                    </image></ImageView>
+            </children>
+        </HBox>
+        <SplitPane dividerPositions="0.29797979797979796" layoutX="6.0" layoutY="114.0" prefHeight="485.0" prefWidth="788.0" AnchorPane.bottomAnchor="5.0" AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="14.0">
+            <items>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="475.0" prefWidth="277.0">
+                    <children>
+                        <GridPane layoutX="14.0" layoutY="14.0" prefHeight="115.0" prefWidth="227.0" AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="16.0" AnchorPane.topAnchor="14.0">
+                            <columnConstraints>
+                                <ColumnConstraints hgrow="SOMETIMES" maxWidth="227.0" minWidth="10.0" prefWidth="227.0" />
+                                <ColumnConstraints hgrow="SOMETIMES" maxWidth="128.0" minWidth="0.0" prefWidth="0.0" />
+                            </columnConstraints>
+                            <rowConstraints>
+                                <RowConstraints maxHeight="34.0" minHeight="10.0" prefHeight="28.0" vgrow="SOMETIMES" />
+                                <RowConstraints maxHeight="53.0" minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                <RowConstraints maxHeight="54.0" minHeight="10.0" prefHeight="54.0" vgrow="SOMETIMES" />
+                            </rowConstraints>
+                            <children>
+                                <Label alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" text="Server URL :" />
+                                <TextField fx:id="m_serverURL" text="http://localhost:3000" GridPane.rowIndex="1" />
+                                <HBox alignment="CENTER_LEFT" prefHeight="54.0" prefWidth="199.0" spacing="10.0" GridPane.rowIndex="2">
+                                    <children>
+                                        <Button mnemonicParsing="false" onAction="#onPingClicked" prefHeight="25.0" prefWidth="74.0" text="Ping" />
+                                        <Label fx:id="m_serverStatus" prefHeight="17.0" prefWidth="139.0" />
+                                    </children>
+                                </HBox>
+                            </children>
+                        </GridPane>
+                        <Separator layoutX="28.0" layoutY="149.0" prefHeight="0.0" prefWidth="193.0" AnchorPane.leftAnchor="28.0" AnchorPane.rightAnchor="36.0" />
+                        <VBox layoutX="14.0" layoutY="170.0" prefHeight="292.0" prefWidth="227.0" spacing="10.0" AnchorPane.bottomAnchor="13.0" AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="16.0" AnchorPane.topAnchor="170.0">
+                            <children>
+                                <Label text="Select Book :" />
+                                <ListView fx:id="m_BooksList" prefHeight="165.0" prefWidth="217.0">
+                                    <padding>
+                                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                    </padding>
+                                </ListView>
+                                <HBox alignment="CENTER_LEFT" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="34.0" prefWidth="217.0" spacing="5.0">
+                                    <children>
+                                        <Label text="Start Line :">
+                                            <padding>
+                                                <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                            </padding>
+                                        </Label>
+                                        <TextField fx:id="m_startLine" prefHeight="27.0" prefWidth="64.0">
+                                            <padding>
+                                                <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                            </padding>
+                                        </TextField>
+                                    </children>
+                                </HBox>
+                                <HBox alignment="CENTER_LEFT" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="37.0" prefWidth="218.0" spacing="5.0">
+                                    <children>
+                                        <Label text="End Line : ">
+                                            <padding>
+                                                <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                            </padding>
+                                        </Label>
+                                        <TextField fx:id="m_endLine" prefHeight="18.0" prefWidth="62.0">
+                                            <padding>
+                                                <Insets bottom="5.0" left="10.0" right="5.0" top="5.0" />
+                                            </padding>
+                                        </TextField>
+                                        <Button fx:id="m_fetchButton" contentDisplay="CENTER" mnemonicParsing="false" onAction="#onFetchLinesClicked" prefHeight="37.0" prefWidth="68.0" text="Fetch ">
+                                            <padding>
+                                                <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                                            </padding>
+                                        </Button>
+                                    </children>
+                                </HBox>
+                            </children>
+                            <padding>
+                                <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                            </padding>
+                        </VBox>
+                    </children>
+                </AnchorPane>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="463.0" prefWidth="609.0">
+                    <children>
+                        <VBox layoutX="11.0" layoutY="12.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="467.0" prefWidth="591.0" spacing="5.0" AnchorPane.bottomAnchor="-4.0" AnchorPane.leftAnchor="11.0" AnchorPane.rightAnchor="7.0" AnchorPane.topAnchor="12.0">
+                            <children>
+                                <Label fx:id="m_paliTextBook" text="Pāli Text:">
+                                    <padding>
+                                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                    </padding>
+                                </Label>
+                                <TextArea fx:id="m_paliText" editable="false" minHeight="-Infinity" minWidth="-Infinity" prefHeight="173.0" prefWidth="589.0" text="This is Text Area" wrapText="true" VBox.vgrow="ALWAYS">
+                                    <font>
+                                        <Font name="Tahoma" size="14.0" />
+                                    </font></TextArea>
+                                <HBox alignment="CENTER_LEFT" prefHeight="41.0" prefWidth="591.0" spacing="10.0">
+                                    <children>
+                                        <Label maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="17.0" prefWidth="135.0" text="Translated Line Number:">
+                                            <HBox.margin>
+                                                <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                            </HBox.margin>
+                                        </Label>
+                                        <TextField fx:id="m_translatedTextLine" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="25.0" prefWidth="74.0" />
+                                        <Button fx:id="m_getTranslatedText" contentDisplay="CENTER" mnemonicParsing="false" onAction="#onGetTranslatedTextClicked" text="Get Translated Text" />
+                                    </children>
+                                </HBox>
+                                <Label maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" text="Translated Text:">
+                                    <padding>
+                                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                    </padding>
+                                </Label>
+                                <TextArea fx:id="m_translatedText" minHeight="-Infinity" minWidth="-Infinity" prefHeight="107.0" prefWidth="598.0" wrapText="true" VBox.vgrow="ALWAYS">
+                                    <padding>
+                                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                    </padding>
+                                    <font>
+                                        <Font name="Sanskrit 2003" size="18.0" />
+                                    </font>
+                                </TextArea>
+                                <HBox alignment="CENTER_LEFT" prefHeight="61.0" prefWidth="591.0" spacing="10.0">
+                                    <children>
+                                        <Button fx:id="m_saveTranslatedText" mnemonicParsing="false" onAction="#onSaveTranslatedTextClicked" text="Save">
+                                            <padding>
+                                                <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                            </padding>
+                                        </Button>
+                                        <Label fx:id="m_saveStatus" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="31.0" prefWidth="534.0" text="Status of the Save Command">
+                                            <padding>
+                                                <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                            </padding>
+                                        </Label>
+                                    </children>
+                                </HBox>
+                            </children>
+                        </VBox>
+                    </children>
+                </AnchorPane>
+            </items>
+            <padding>
+                <Insets bottom="10.0" />
+            </padding>
+            <opaqueInsets>
+                <Insets bottom="10.0" />
+            </opaqueInsets>
+        </SplitPane>
+    </children>
+</AnchorPane>
+
